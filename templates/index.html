@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Column</title>
+
+</head>
+
+<body style="background: #ffffff00;">
+    <div class="login">
+        <h1 style="color:#f19a37d7;">Column prediction</h1>
+        <form action="{{ url_for('predict')}}"method="post">
+            <input type="text" name="pelvic incidence" placeholder="pelvic incidence" required="required" /><br>
+            <input type="text" name="pelvic tilt" placeholder="pelvic tilt" required="required" /><br>
+            <input type="text" name="lumbar lordosis angle" placeholder="lumbar lordosis angle" required="required" /><br>
+            <input type="text" name="sacral slope" placeholder="sacral slope" required="required" /><br>
+            <input type="text" name="pelvic radius" placeholder="pelvic radius" required="required" /><br>
+            <input type="text" name="grade of spondylolisthesis" placeholder="grade of spondylolisthesis" required="required" /><p>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    <br>
+    <br>
+    <h4 style="color: #f19a37d7;">
+    {{ prediction_text }} </h4>
+    </div>
+
+
+
+</body>
+
+</html>
