@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Column</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Column classification</title>
 
 </head>
 
-<body style="background: #ffffff00;">
-    <div class="login">
-        <h1 style="color:#f19a37d7;">Column prediction</h1>
-        <form action="{{ url_for('predict')}}"method="post">
-            <input type="text" name="pelvic incidence" placeholder="pelvic incidence" required="required" /><br>
-            <input type="text" name="pelvic tilt" placeholder="pelvic tilt" required="required" /><br>
-            <input type="text" name="lumbar lordosis angle" placeholder="lumbar lordosis angle" required="required" /><br>
-            <input type="text" name="sacral slope" placeholder="sacral slope" required="required" /><br>
-            <input type="text" name="pelvic radius" placeholder="pelvic radius" required="required" /><br>
-            <input type="text" name="grade of spondylolisthesis" placeholder="grade of spondylolisthesis" required="required" /><p>
+<body>
+    <div class="container pt-5">
+        <div class="row justify-content-md-center">
+            <div class="col-md-4">
+                <h1 style="color:#f19a37d7;">Column Classification</h1>
+                <form action="{{ url_for('predict')}}"method="post">
+                    <input type="text" name="pelvic incidence" placeholder="pelvic incidence" value="40" required="required" />Pelvic incidence<br>
+                    <input type="text" name="pelvic tilt" placeholder="pelvic tilt" value="10" required="required" />Pelvic tilt<br>
+                    <input type="text" name="lumbar lordosis angle" placeholder="lumbar lordosis angle" value="25" required="required" />Lumbar lordosis angle<br>
+                    <input type="text" name="sacral slope" placeholder="sacral slope" value="30" required="required" />Sacral slope<br>
+                    <input type="text" name="pelvic radius" placeholder="pelvic radius" value="125" required="required" />Pelvic radius<br>
+                    <input type="text" name="grade of spondylolisthesis" placeholder="grade of spondylolisthesis" value="4" required="required" />Grade of spondylolisthesis<p>
 
-            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-        </form>
-    <br>
-    <br>
-    <h4 style="color: #f19a37d7;">
-    {{ prediction_text }} </h4>
+                    <button type="submit" class="btn btn-primary btn-block btn-large">Result</button>
+                </form>
+                <br>
+                <h4 style="color: #f19a37d7;">
+                {{ classification_text }} </h4>
+            </div>
+        </div>
     </div>
 
 
